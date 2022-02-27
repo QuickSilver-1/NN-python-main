@@ -1,2 +1,4 @@
 # NN-python-main
-this is my school project. I want learn base NN and AI
+This is my school project. I want to learn basic MachinLearning and  Ai)
+
+
