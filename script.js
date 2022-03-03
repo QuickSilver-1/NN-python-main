@@ -45,4 +45,19 @@ function drawing(ctx, x1, y1, x2, y2) {
     ctx.arc(x2, y2, 15, 0, 2*Math.PI, false);
     ctx.fill();
     ctx.closePath();
+};
+
+function recognize() {
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const data = imageData.data;
+    let img = [];
+    for (let i = 0; i < data.length; i += 4) {
+        img[img.length] = (data[i] + data[i+1] + data[i+2]) / 3;
+    };
+    console.log(img);
+    console.log(data)
+};
+
+function clearing() {
+    ctx.clearRect(0, 0, 400, 400);
 }
