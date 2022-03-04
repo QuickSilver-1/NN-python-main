@@ -53,17 +53,25 @@ function gray_format () {
     const data = imageData.data;
     let img = [];
     for (let i = 0; i < data.length; i += 4) {
-        img[img.length] = (data[i] + data[i+1] + data[i+2]) / 3;
-    return img;
-    };
+        img[img.length] = (data[i] + data[i+1] + data[i+2]) / 3};
+        return img
 };
 
 function clearing() {
     ctx.clearRect(0, 0, 392, 392);
 };
 
-eel.expose(call);
-async function call() {
-    let answer = await eel.go();
-    console.log(answer);
+function call() {
+    eel.go(gray_format());
 };
+
+eel.expose(write);
+function write (x, y) {
+    console.log(x);
+    console.log(y);
+};
+
+function train () {
+    eel.learning();
+};
+
