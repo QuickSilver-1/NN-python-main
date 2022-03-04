@@ -47,17 +47,23 @@ function drawing(ctx, x1, y1, x2, y2) {
     ctx.closePath();
 };
 
-function recognize() {
+eel.expose(gray_format);
+function gray_format () {
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     const data = imageData.data;
     let img = [];
     for (let i = 0; i < data.length; i += 4) {
         img[img.length] = (data[i] + data[i+1] + data[i+2]) / 3;
+    return img;
     };
-    console.log(img);
-    console.log(data)
 };
 
 function clearing() {
-    ctx.clearRect(0, 0, 400, 400);
-}
+    ctx.clearRect(0, 0, 392, 392);
+};
+
+eel.expose(call);
+async function call() {
+    let answer = await eel.go();
+    console.log(answer);
+};
