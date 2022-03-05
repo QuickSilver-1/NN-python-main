@@ -14,21 +14,12 @@ def go(data):
     def formating(pixels):
         pixels = np.array(pixels)
         pixels.shape = (392, 392)
-        plt.imshow(pixels)
-        plt.show()
-
-        #Ниже проблема с конвертацие изображения
-        #Выдаёт ошибку на 22 строке
-        pixels = pixels.resize((28, 28))
-        print(pixels)
-        print(type(pixels))
-        plt.imshow(pixels)
-        plt.show()
+        pixels = Image.fromarray(pixels)
+        pixels = pixels.resize((28, 28), Image.ANTIALIAS)
+        pixels = np.array(pixels)
         return pixels
 
     img = formating(data)
-    plt.imshow(img)
-    plt.show()
     img = np.expand_dims(img, axis=0)
     img = img / 255
     answer = neuralNet.predict(img)
@@ -45,7 +36,7 @@ def learning():
     train_answer = keras.utils.to_categorical(train_answer, 10)
     test_answer = keras.utils.to_categorical(test_answer, 10)
     neuralNet.fit(train_images, train_answer, batch_size=40,
-              epochs=1, validation_split=0.2)
+              epochs=5, validation_split=0.2)
     neuralNet.evaluate(test_images, test_answer)
 
 
@@ -60,6 +51,12 @@ neuralNet.compile(optimizer='adam',
                   metrics=['accuracy'])
 
 eel.start('main.html', size=(830, 550), mode='chrome', port=0)
+
+
+
+
+
+
 
 
 
