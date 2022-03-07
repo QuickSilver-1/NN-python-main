@@ -1,0 +1,113 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-size: 20px;
+    font-family: Roboto, Arial, sans-serif;
+  }
+
+  nav {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  nav:before {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    content: '';
+    position: absolute;
+    left: 0px;
+    z-index: -1;
+  }
+  
+  ul{
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    list-style: none;
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+  
+  ul li {
+    float: left;
+    height: 50px;
+    width: 33.333%;
+    text-align: center;
+  }
+  
+  ul li a {
+    color: white;
+    display: block;
+    padding:0 30px;
+    line-height: 50px;
+    text-decoration: none;
+  }
+  
+  ul li a:hover {
+    background-color: #e0373d;
+  }
+
+  .devrow{
+    padding-top: 15px;
+    width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .model{
+    float: left;
+    width: 400px;
+    margin-right: 20px;
+  }
+
+  .training{
+    float: left;
+    width: 400px;
+  }
+
+  h4{
+    margin: 5px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .button{
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  button{
+    width: 100px;
+    height: 20px;
+    margin-top: 15px;
+  }
+
+  .b1{
+    margin-top: 12px;
+  }
+
+  .text{
+    margin-top: 15px;
+  }
+
+  .info{
+    width: 700px;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h5{
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 160px;
+  }
