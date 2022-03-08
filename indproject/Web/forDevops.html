@@ -19,27 +19,27 @@
     <div class="devrow">
       <div class="model">
         <h4>Создание модели нейросети:</h4>
-        <form>
+        <form id="model">
           <input type="radio" value="perceptron" id="perceptron" name="model" checked>
           <label for="perceptron">Перцептрон</label>
 
-          <input type="radio" value="better" id="betterm" name="model">
+          <input type="radio" value="better" id="betterm" name="model" class="text1">
           <label for="betterm">Свёрточная нейросеть</label>
           
           <label for="neirons">Кол-во нейронов:</label>
-          <input type="text" class="text" id="neirons" placeholder="500">
+          <input type="text" name="many" id="neirons">
 
-          <div class="button"><button type="button" onclick="model()" id="make">Создать</button></div>
+          <div class="button"><button type="submit">Создать</button></div>
         </form>
       </div>
       <div class="training">
       <h4>Тренировка нейросети:</h4>
-        <form>
-          <label for="epochs">Кол-во эпох обучения:</label>
-          <input type="text"  placeholder="5" id="epochs">
-
+        <form id="train">
           <div class="text">Это действие займёт некоторое время</div>
-          <div class="button"><button class="b1" type="button" onclick="train()">Тренировка</button></div>
+          <label for="epochs">Кол-во эпох обучения:</label>
+          <input type="text" id="epochs" name="epochs">
+
+          <div class="button"><button class="b1" type="submit">Тренировка</button></div>
         </form>
       </div>
       <div class="info">
