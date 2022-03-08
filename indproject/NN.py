@@ -30,20 +30,23 @@ def go(data):
 
 
 @eel.expose
-def learning():
+def learning(epochs):
+    epochs = int(epochs)
     (train_images, train_answer), (test_images, test_answer) = mnist.load_data()
     train_images = train_images / 255
     test_images = test_images / 255
     train_answer = keras.utils.to_categorical(train_answer, 10)
     test_answer = keras.utils.to_categorical(test_answer, 10)
-    neuralNet.fit(train_images, train_answer, batch_size=100,
-                  epochs=10, validation_split=0.2)
+    his = neuralNet.fit(train_images, train_answer, batch_size=100,
+                  epochs=epochs, validation_split=0.2)
     neuralNet.evaluate(test_images, test_answer)
     neuralNet.save('save.h5')
+    plt.show()
 
 
 @eel.expose
 def make_defoultnn(neirons):
+    neirons = int(neirons)
     global neuralNet
     neuralNet = keras.Sequential([
         Flatten(input_shape=(28, 28, 1)),
