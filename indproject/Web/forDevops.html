@@ -12,52 +12,26 @@
       <nav>
         <ul class="head">
           <li><a href="main.html">Основная</a></li>     
-          <li><a href="forDevops.html">Разработчикам</a></li>
+          <li><a href="forDevops.html">Модель</a></li>
           <li><a href="info.html">Теория</a></li>
         </ul>
     </header>
-    <div class="devrow">
-      <div class="model">
-        <h4>Создание модели нейросети:</h4>
-        <form id="model">
-          <input type="radio" value="perceptron" id="perceptron" name="model" checked>
-          <label for="perceptron">Перцептрон</label>
+    <div class="form">
+      <h1>Создание модели нейросети:</h1>
+      <form id="model">
+        <input type="radio" value="perceptron" id="perceptron" name="model">
+        <label for="perceptron">Перцептрон</label>
 
-          <input type="radio" value="better" id="betterm" name="model" class="text1">
-          <label for="betterm">Свёрточная нейросеть</label>
-          
-          <label for="neirons">Кол-во нейронов:</label>
-          <input type="text" name="many" id="neirons">
+        <input type="radio" value="better" id="betterm" name="model" class="text1">
+        <label for="betterm">Свёрточная нейросеть</label>
 
-          <div class="button"><button type="submit">Создать</button></div>
-        </form>
-      </div>
-      <div class="training">
-      <h4>Тренировка нейросети:</h4>
-        <form id="train">
-          <div class="text">Это действие займёт некоторое время</div>
-          <label for="epochs">Кол-во эпох обучения:</label>
-          <input type="text" id="epochs" name="epochs">
-
-          <div class="button"><button class="b1" type="submit">Тренировка</button></div>
-        </form>
-      </div>
+        <div class="button"><button type="submit">Использовать</button></div>
+      </form>
+    </div>
       <div class="info">
-        <h5>Это раздел для создания структуры новой нейросети и её обучения.</h5><br>
-        В левом столбце вы можете настроить создание новой модели:<br> 
-        <ol>
-          <li>Cвёрточная нейросеть более сложна, а потому её обучение займёт большее время<br></li> 
-          <li>Оптимальное количество нейронов 150-500, если поставить слишком маленькое число, то нейросеть не сможет хорошо распознавать цифры</li> 
-          <li>А если слишком большое, то нейросеть будет просто запоминать тестовую выборку и плохо работать с пользовательскими изображениями.</li> 
-        </ol>
-        В правом столбце происходит каллибровка весов нейросети:
-        <ol>
-          <li>Оптимальное количество эпох около 5</li>
-          <li>Большее количество займет много времени</li>
-          <li>А слишком короткое обучение будет не эффективным</li>
-        </ol>
+        1) Перцептрон - это самая популярная и простая модель нейросети<br>
+        2) Свёрточная нейросеть - гораздо более сложная и совершенная структура для нейросетей, но более тяжёлая и медленная
       </div>
-  </div>
   <script type="text/javascript" src="devops.js"></script>
 </body>
 </html>

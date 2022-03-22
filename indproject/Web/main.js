@@ -2,8 +2,8 @@ let isDrowing = false;
 let x1 = 0;
 let y1 = 0;
 
-const canvas = document.getElementById('c1');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById('c1'),
+      ctx = canvas.getContext('2d');
 
 canvas.addEventListener('mousedown', event => {
     x1 = event.offsetX;
@@ -64,7 +64,6 @@ function clearing() {
 async function call() {
     await eel.go(gray_format());
 };
-
 
 eel.expose(write);
 function write (answer) {

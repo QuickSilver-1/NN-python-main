@@ -1,14 +1,13 @@
 import eel
 import numpy as np
-from tensorflow import keras
-from keras.layers import Dense, Flatten
-from keras.datasets import mnist
-from PIL import Image
-import matplotlib.pyplot as plt
+# from tensorflow import keras
+# from keras.layers import Dense, Flatten, Conv2D, MaxPooling2D
+# from keras.datasets import mnist
 from keras.models import load_model
+from PIL import Image
+
 
 eel.init('web')
-
 
 @eel.expose
 def go(data):
@@ -25,37 +24,69 @@ def go(data):
     answer = neuralNet.predict(img)
     x= answer
     x = list(map(lambda x: round(x * 100, 2), x[0]))
-    print(x)
     eel.write(x)
 
 
-@eel.expose
-def learning(epochs):
-    epochs = int(epochs)
-    (train_images, train_answer), (test_images, test_answer) = mnist.load_data()
-    train_images = train_images / 255
-    test_images = test_images / 255
-    train_answer = keras.utils.to_categorical(train_answer, 10)
-    test_answer = keras.utils.to_categorical(test_answer, 10)
-    his = neuralNet.fit(train_images, train_answer, batch_size=100,
-                  epochs=epochs, validation_split=0.2)
-    neuralNet.evaluate(test_images, test_answer)
-    neuralNet.save('save.h5')
-    plt.show()
+# def learning(epochs):
+#     epochs = int(epochs)
+#     (train_images, train_answer), (test_images, test_answer) = mnist.load_data()
+#     train_images = train_images / 255
+#     test_images = test_images / 255
+#     if code == 1:
+#         train_images = np.expand_dims(train_images, axis=3)
+#         test_images = np.expand_dims(test_images, axis=3)
+#     train_answer = keras.utils.to_categorical(train_answer, 10)
+#     test_answer = keras.utils.to_categorical(test_answer, 10)
+#     neuralNet.fit(train_images, train_answer, batch_size=32,
+#                   epochs=epochs, validation_split=0.2)
+#     neuralNet.evaluate(test_images, test_answer)
+#     if code == 1:
+#         neuralNet.save('better.h5')
+#     else:
+#         neuralNet.save('defoult.h5')
+
+# def make_defoultnn(neirons):
+#     neirons = int(neirons)
+#     global neuralNet
+#     global code
+#     code = 0
+#     neuralNet = keras.Sequential([
+#         Flatten(input_shape=(28, 28, 1)),
+#         Dense(neirons, activation='relu'),
+#         Dense(10, activation='softmax')])
+#     neuralNet.compile(optimizer='adam',
+#                       loss='categorical_crossentropy',
+#                       metrics=['accuracy'])
+
+
+# def make_betternn():
+#     global neuralNet
+#     global code
+#     code = 1
+#     neuralNet = keras.Sequential([
+#         Conv2D(32, (3, 3), padding='same', activation='relu', input_shape=(28,28,1)),
+#         MaxPooling2D((2, 2), strides=2),
+#         Conv2D(64, (3, 3), padding='same', activation='relu'),
+#         MaxPooling2D((2, 2), strides=2),
+#         Flatten(),
+#         Dense(128, activation='relu'),
+#         Dense(10, activation='softmax')
+#     ])
+#     neuralNet.compile(optimizer='adam',
+#                       loss='categorical_crossentropy',
+#                       metrics=['accuracy'])
 
 
 @eel.expose
-def make_defoultnn(neirons):
-    neirons = int(neirons)
+def load_model_nn(model):
     global neuralNet
-    neuralNet = keras.Sequential([
-        Flatten(input_shape=(28, 28, 1)),
-        Dense(neirons, activation='relu'),
-        Dense(10, activation='softmax')])
-    neuralNet.compile(optimizer='adam',
-                      loss='categorical_crossentropy',
-                      metrics=['accuracy'])
+    if model == 'perceptron':
+        neuralNet = load_model('defoult.h5')
+        print(neuralNet.summary())
+    else:
+        neuralNet = load_model('better.h5')
+        print(neuralNet.summary())
 
 
-neuralNet = load_model('save.h5')
-eel.start('main.html', size=(830, 550), mode='chrome', port=8080, host='localhost')
+neuralNet = load_model('defoult.h5')
+eel.start('main.html', size=(950, 700), mode='chrome', port=8081, host='localhost')

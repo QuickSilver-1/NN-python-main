@@ -1,23 +1,20 @@
-const form = document.getElementById('model'),
-      training = document.getElementById('train');
-
-async function train (event) {
-    event.preventDefault();
-
-    const epochs = training.querySelector('[name="epochs"]').value;
-    await eel.learning(epochs);
-};
+const form = document.getElementById('model');
 
 function models (event) {
     event.preventDefault();
 
-    const models = form.querySelector('[name="model"]').value,
-          neirons = form.querySelector('[name="many"]').value;
-    console.log(neirons);
-    if (models == 'perceptron') {
-        eel.make_defoultnn(neirons);
+    const models = form.querySelectorAll('[name="model"]');
+    console.log(models);
+
+    for (let i = 0; i < models.length; i++) {
+        if (models[i].checked) {
+            nn = models[i].value;
+        };
     };
-};
+
+    console.log(nn);
+
+        eel.load_model_nn(nn);
+    };
 
 form.addEventListener('submit', models);
-training.addEventListener('submit', train);
