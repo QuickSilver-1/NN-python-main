@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NeiroNet</title>
+  <link rel="stylesheet" href="devops.css">
+  <script type="text/javascript" src="/eel.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <nav>
+        <ul class="head">
+          <li><a href="main.html">Основная</a></li>     
+          <li><a href="forDevops.html">Модель</a></li>
+          <li><a href="info.html">Теория</a></li>
+        </ul>
+    </header>
+    <div class="form">
+      <h1>Создание модели нейросети:</h1>
+      <form id="model">
+        <input type="radio" value="perceptron" id="perceptron" name="model">
+        <label for="perceptron">Перцептрон</label>
+
+        <input type="radio" value="better" id="betterm" name="model" class="text1">
+        <label for="betterm">Свёрточная нейросеть</label>
+
+        <div class="button"><button type="submit">Использовать</button></div>
+      </form>
+    </div>
+      <div class="info">
+        1) Перцептрон - это самая популярная и простая модель нейросети<br>
+        2) Свёрточная нейросеть - гораздо более сложная и совершенная структура для нейросетей, но более тяжёлая и медленная
+      </div>
+  <script type="text/javascript" src="devops.js"></script>
+</body>
+</html>

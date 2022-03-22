@@ -1,0 +1,127 @@
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 20px;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+nav {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav:before {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  content: '';
+  position: absolute;
+  left: 0px;
+  z-index: -1;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  list-style: none;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+ul li {
+  float: left;
+  height: 50px;
+  width: 33.333%;
+  text-align: center;
+}
+
+ul li a {
+  color: white;
+  display: block;
+  padding:0 30px;
+  line-height: 50px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #e0373d;
+}
+
+h1{
+  margin-top: 19px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.rules{
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.main_row{
+  width: 814px;
+  height: 392px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+canvas {
+  height: 392px;
+  width: 392px;
+  margin-left: 10px;
+  float: left;
+  margin-right: 10px;
+  border: 2px solid #222222;
+  background-color: black;
+}
+
+#answer{
+  float: left;
+  height: 392px;
+  width: 392px;
+  border: 2px solid black;
+  padding: 20px;
+  padding-top: 10px;
+}
+
+h5{
+  margin: 0;
+  font-size: inherit;
+}
+
+.bullets{
+  margin-top: 10px;
+  height: 50px;
+  text-align: center;
+}
+
+.bullets button{
+  font-size: 18px;
+  width: 120px;
+  height: 30px;
+  margin-right: 3px;
+  margin-left: 3px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  border: none;
+}
+
+.bullets button:hover{
+  background-color: #e0373d;
+}
+
+
+
+
+
