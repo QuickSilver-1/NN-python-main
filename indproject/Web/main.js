@@ -32,7 +32,7 @@ window.addEventListener('mouseup', event => {
 function drawing(ctx, x1, y1, x2, y2) {
     ctx.beginPath();
     ctx.strokeStyle = 'white';
-    ctx.lineWidth = 30;
+    ctx.lineWidth = 24;
     ctx.moveTo(x1, y1);
     ctx.lineTo(x2, y2);
     ctx.stroke();
@@ -42,7 +42,7 @@ function drawing(ctx, x1, y1, x2, y2) {
     ctx.beginPath();
     ctx.strokeStyle = 1;
     ctx.fillStyle = 'white';
-    ctx.arc(x2, y2, 15, 0, 2*Math.PI, false);
+    ctx.arc(x2, y2, 12, 0, 2*Math.PI, false);
     ctx.fill();
     ctx.closePath();
 };

@@ -9,6 +9,11 @@ body {
   font-family: Roboto, Arial, sans-serif;
 }
 
+header{
+  position: sticky; 
+  top: 0;
+}
+
 nav {
   width: 800px;
   margin-left: auto;
