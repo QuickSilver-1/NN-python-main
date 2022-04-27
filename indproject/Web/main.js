@@ -62,7 +62,7 @@ function clearing() {
 };
 
 async function call() {
-    await eel.go(gray_format());
+    await eel.send(gray_format());
 };
 
 eel.expose(write);
